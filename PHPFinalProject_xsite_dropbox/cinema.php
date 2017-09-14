@@ -42,7 +42,7 @@ if (mysqli_connect_errno()) {
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <img src="pictures/cinema/2.jpg" class="img-responsive img-rounded" alt="mvie1"/>
+                                <img src="pictures/cinema/2.png" class="img-responsive img-rounded" alt="movie1"/>
                             </div>
                             <div class="item">
                                 <img src="pictures/cinema/3.jpg" class="img-responsive img-rounded" alt="movie2"/>
