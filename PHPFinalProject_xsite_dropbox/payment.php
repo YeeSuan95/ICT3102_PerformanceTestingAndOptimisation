@@ -5,8 +5,8 @@ if (!isset($_SESSION)) {
 
 $host = "localhost";
 $database = "shawdb_xsite_dropbox";
-$user = "shawread";
-$pass = "12345678";
+$user = "root";
+$pass = "";
 $connection = mysqli_connect($host, $user, $pass, $database);
 
 if (mysqli_connect_errno()) {
