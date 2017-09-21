@@ -65,20 +65,6 @@ if (mysqli_connect_errno()) {
 
 
         </script>
-        <script type="text/javascript">
-            var verifyCallback = function (response) {
-                alert(response);
-            };
-            var onloadCallback = function () {
-                // Renders the HTML element with id 'example1' as a reCAPTCHA widget.
-                // The id of the reCAPTCHA widget is assigned to 'widgetId1'.
-                grecaptcha.render('example3', {
-                    'sitekey': '6LcuFBITAAAAAHZONK_muOGH-eluSXgQEe7PV1Lp',
-                    'callback': verifyCallback,
-                    'theme': 'dark'
-                });
-            };
-        </script>
     </head>
     <body>
         <?php include "header.php" ?>
@@ -153,8 +139,8 @@ if (mysqli_connect_errno()) {
                                 $_SESSION['timing_date'] = $_POST['timing_date'];
                                 $_SESSION['timing_timing'] = $_POST['timing_timing'];
                    
-                                $linkID = @ mysql_connect("localhost", "shawread", "12345678") or die("Could not connect to MySQL server");
-                                @ mysql_select_db("shawdb") or die("Could not select database");
+                                $linkID = @ mysql_connect("localhost", "root", "") or die("Could not connect to MySQL server");
+                                @ mysql_select_db("shawdb_xsite_dropbox") or die("Could not select database");
                                 /* Create and execute query. */
                                 if (isset($_POST['timing_ID'])) {
                                     $timmingID = $_POST['timing_ID'];
@@ -226,9 +212,6 @@ if (mysqli_connect_errno()) {
                                 </table>
 
                             </form>
-                            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-                                    async defer>
-                            </script>
                         </div>
                     </div>
                 </div>

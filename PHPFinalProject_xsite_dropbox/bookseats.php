@@ -72,8 +72,8 @@ if (mysqli_connect_errno()) {
                                     $oldStatusCode = $_POST['oldStatusCode'];
 
                                     // open database connection
-                                    $linkID = @ mysql_connect("localhost", "shawread", "12345678") or die("Could not connect to MySQL server");
-                                    @ mysql_select_db("shawdb") or die("Could not select database");
+                                    $linkID = @ mysql_connect("localhost", "root", "") or die("Could not connect to MySQL server");
+                                    @ mysql_select_db("shawdb_xsite_dropbox") or die("Could not select database");
 
                                     // prepare select statement
                                     $selectQuery = "SELECT rowId, columnId from seats where ( timing_ID = '$timmingID' and";
