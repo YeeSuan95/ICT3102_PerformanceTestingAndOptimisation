@@ -1,0 +1,12 @@
+# Playbook
+
+docker run --name test -dit -p 80:80 \
+-v ~/GitHub/ICT3102_PerformanceTestingAndOptimisation:/mnt \
+-v ~/GitHub/ICT3102_PerformanceTestingAndOptimisation/PHPFinalProject_xsite_dropbox:/var/www/html \
+ubuntu:16.04
+
+docker exec -it test /bin/bash
+
+cd /mnt
+chmod +x install.sh
+./install.sh
