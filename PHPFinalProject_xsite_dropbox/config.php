@@ -3,7 +3,7 @@
     date_default_timezone_set( "Asia/Singapore" );  // http://www.php.net/manual/en/timezones.php
     define( "DB_DSN", "mysql:host=localhost;dbname=shawdb_xsite_dropbox" );
     define( "DB_USERNAME", "root" );
-    define( "DB_PASSWORD", "" );
+    define( "DB_PASSWORD", "p1k3HR9bhk4OZMv3" );
     define( "CLASS_PATH", "classes" );
     define( "TEMPLATE_PATH", "templates" );
     //define( "HOMEPAGE_NUM_ARTICLES", 5 );
@@ -18,6 +18,6 @@
     }
 
     set_exception_handler( 'handleException' );
-    
-    
+
+
  ?>

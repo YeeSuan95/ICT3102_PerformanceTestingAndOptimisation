@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
     die(mysqli_connect_error());
 }
 ?>
-<?php   
+<?php
 unset($_SESSION);
 session_destroy();
     ?>
@@ -76,7 +76,7 @@ session_destroy();
                         </a>
 
                     </div>
-                </div>                    
+                </div>
             </div>
         </section>
 
@@ -87,20 +87,20 @@ session_destroy();
                     <div class="row" style="padding-top: 10px;">
 
                         <?php
-                        
+
                         $sql = "SELECT * FROM movies";
                         $result = mysqli_query($connection, $sql);
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo '<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="padding-top: 40px;">';
                             echo '<center><button type="button" class="btn-link img-responsive" data-toggle="modal" data-target="#modal' . $row['movie_ID'] . '"><img src="pictures/movies/'.$row['movie_ID'].$row['movie_image'] . '" class="img-rounded img-responsive" alt=""/></button></center>';
                             echo '<p class="aligning"><button type="button" class="btn-link" data-toggle="modal" data-target="#modal' . $row['movie_ID'] . '">' . $row['movie_name'] . '</button></p>';
-                           
+
                             echo '<form method="POST" action="movieSelect.php">
                                 <input type="hidden" id="movie_ID" name="movie_ID" value="' . $row['movie_ID'] . '"/>
                                 <input type="hidden" id="movie_name" name="movie_name" value="' . $row['movie_name'] . '"/>
                                 <center><input type="submit" align="middle" name="submit" value="Buy Tickets"/></center>
-                                 </form>';  
-                            
+                                 </form>';
+
                             echo '<div id="modal' . $row['movie_ID'] . '" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -118,7 +118,7 @@ session_destroy();
                                             <p>' . $row['movie_runningtime'] . '</p>
                                             <p class="subheader">Screening Date</p>
                                             <p>' . $row['movie_screeningdate'] . '</p>
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -126,7 +126,7 @@ session_destroy();
                           </div>';
                         }
                         ?>
-                    </div> 
+                    </div>
                 </div>
                 <?php include "footer.php" ?>
             </div>
