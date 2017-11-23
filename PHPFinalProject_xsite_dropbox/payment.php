@@ -150,6 +150,21 @@ if (isset($_POST['Submit'])) {
                 echo "Error: " . $sql10 . "<br>" . $connection->error;
             }
 
+            //
+            $sql01 = "select customer_ID from customer where customer_name = '$initial' and customer_phone = '$contact_number' and customer_email='$email'";
+            $sql02 = "select payment_ID from payment where creditCardName = '$card_name' and payment_number = '$card_number' and payment_expiry='$expiry_value' and payment_cvv ='$cvv'";
+            $result01 = mysqli_query($connection, $sql01);
+            $result02 = mysqli_query($connection, $sql02);
+            $row01 = mysqli_fetch_array($result01);
+            $row02 = mysqli_fetch_array($result02);
+            $cid = $row01['customer_ID'];
+            $pid = $row02['payment_ID'];
+            $tid = $_SESSION['timing_ID'];
+            $tq = $_SESSION['seatsBooked'];
+
+            $sql03 = "INSERT INTO bookings(customer_ID,timing_ID,payment_ID,ticket_quantity)VALUES('$cid','$tid','$pid','$tq')";
+            $result03 = mysqli_query($connection, $sql03);
+            //
             $connection->close();
             
             // EMAIL
