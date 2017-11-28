@@ -15,9 +15,11 @@
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.php"><span class="glyphicon glyphicon-map-marker"></span> Movies</a></li>
+                                <li><a href="index.php"><span class="glyphicon glyphicon-map-marker"></span> Movies</a></li>
                                 <li><a href="cinema.php"> <span class="glyphicon glyphicon-road"></span>  Cinemas</a></li>
                                 <li><a href="promotions.php"> <span class="glyphicon glyphicon-piggy-bank"></span> Promotions<span class="sr-only">(current)</span></a></li>
+                                <li><a href="test.php"> <span class="glyphicon glyphicon-apple"></span> Search by Movie Name<span class="sr-only">(current)</span></a></li>
+                                <li><a href="test2.php"> <span class="glyphicon glyphicon-apple"></span> All Movie show times<span class="sr-only">(current)</span></a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
