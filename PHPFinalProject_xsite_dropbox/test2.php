@@ -45,7 +45,7 @@ session_destroy();
                 <div class="container img-rounded">
                     <div class="row" style="padding-top: 10px;">
 
-                        <table id="example" class="stripe row-border order-column well" cellspacing="0" width="100%">
+                        <table id="example" class="stripe row-border order-column well BookingDetailsfontColor" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Movie Name</th>
@@ -68,6 +68,29 @@ session_destroy();
                             </tfoot>
                             <tbody>
                                 <?php
+								//Store the micro time so that we know
+								//when our script started to run.
+								$executionStartTime = microtime(true);
+
+								//Example code.
+								$connection->query("SELECT M.movie_name, T.timing_date, T.timing_timing, 
+									S.rowId, S.columnId, S.status FROM movies M 
+                                    JOIN timeslots T ON M.movie_ID = T.movie_ID
+                                    JOIN seats S ON S.timing_ID = T.timing_ID 
+                                    ORDER BY M.movie_name");
+
+								//At the end of your code, compare the current
+								//microtime to the microtime that we stored
+								//at the beginning of the script.
+								$executionEndTime = microtime(true);
+
+								//The result will be in seconds and milliseconds.
+								$seconds = $executionEndTime - $executionStartTime;
+
+								//Print it out
+								echo "This script took $seconds to execute.";
+								
+
                                 $sql = "SELECT M.movie_name, T.timing_date, T.timing_timing, S.rowId, S.columnId, S.status FROM movies M 
                                     JOIN timeslots T ON M.movie_ID = T.movie_ID
                                     JOIN seats S ON S.timing_ID = T.timing_ID 
